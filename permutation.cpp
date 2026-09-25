@@ -83,14 +83,18 @@ void compare_with_permutation(int n, int r, int a, int b){
 
 int main(){
     int t;
-    cin>> t;
+    if(!(cin >> t) || t < 0){
+        return 0;
+    }
     while(t--){
-        int n;
-        cin>> n;
-        int r; cin >>r;
-        // cout<< "Hoán vị thứ " << r << " của " << n << " là: " << permutation(n, r) << endl;
-        permutation(n, r);
-
+        int n, r;
+        if(!(cin >> n >> r)){
+            return 0;
+        }
+        int result = permutation(n, r);
+        if(result != -1){
+            cout << "Hoán vị thứ " << r << " của " << n << " là: " << result << endl;
+        }
     }
 
     return 0;
